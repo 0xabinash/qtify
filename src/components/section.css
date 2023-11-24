@@ -1,0 +1,26 @@
+.section-container{
+    padding: 10px 32px;
+}
+
+.title{
+    font-size: 20px;
+    color: var(--css-white);
+}
+
+.section-toggle-btn{
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--css-primary);
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-header{
+    display: flex;
+    justify-content: space-between;
+}

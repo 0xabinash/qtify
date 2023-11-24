@@ -1,0 +1,23 @@
+.carousel-container{
+    position: relative;
+
+}
+
+.arrow{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+.arrow-left{
+    left: -15px;
+}
+
+.arrow-right{
+    right: -15px;
+}

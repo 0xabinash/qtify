@@ -1,0 +1,22 @@
+.hs-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 272px;
+    width: 100vw;
+    background-color: var(--css-black);
+}
+
+.hs-content{
+    font-display: flex;
+    color: var(--css-white);
+}
+
+.hs-img-frame{
+    height: 212px;
+    width: 212px;
+}
+
+.hs-img-frame > img{
+    object-fit: cover;
+}
