@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/qtify/static/css/main.36d8ae98.css",
+    "main.js": "/qtify/static/js/main.e66b8239.js",
+    "static/media/search-icon.svg": "/qtify/static/media/search-icon.dd412b17d027f487794a6a6efed1d8be.svg",
+    "index.html": "/qtify/index.html",
+    "main.36d8ae98.css.map": "/qtify/static/css/main.36d8ae98.css.map",
+    "main.e66b8239.js.map": "/qtify/static/js/main.e66b8239.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36d8ae98.css",
+    "static/js/main.e66b8239.js"
+  ]
+}
