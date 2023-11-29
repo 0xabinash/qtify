@@ -1,0 +1,47 @@
+.search-suggestions{
+    position: absolute;
+    top: 60px;
+    width: 570px;
+    max-height: 500px;
+    border: 2px solid red;
+    overflow-y: auto;
+    color: var(--css-white);
+    z-index: 111;
+    background-color: var(--css-black);
+}
+
+.suggestion{
+    display: flex;
+    height: 120px;
+    width: 100%;
+    border: 1px solid blue;
+}
+
+.suggestion-img{
+    width: 120px;
+    height: 100%;
+    border: 2px solid yellow;
+}
+
+.suggestion-follows{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100%;
+    border: 2px solid yellow;
+}
+
+.suggestion-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    flex: 1;
+    border: 2px solid orange;
+}
+
+.suggestion-name :nth-child(2){
+    font-size: 8px;
+}

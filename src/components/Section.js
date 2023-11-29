@@ -3,7 +3,7 @@ import { Card, Carousel } from "./index";
 import { useState } from "react";
 
 
-const Section = ({title, data}) =>{
+const Section = ({navId, title, data}) =>{
 
     const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -19,7 +19,7 @@ const Section = ({title, data}) =>{
                 </h1>
             </div>
             {
-                isCollapsed? (<Carousel data={data} />):
+                isCollapsed? (<Carousel navId={navId} data={data} />):
                 (<div className="card-container">
                     {data?.map((cardData)=>{
                         return(

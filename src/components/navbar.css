@@ -48,6 +48,9 @@
     border-radius: 0 8px 8px 0;
     padding: 8px 10px;
     border: 1px solid var(--css-black);
-
-
 }
+
+.search-parent-container{
+    position: relative;
+}
+

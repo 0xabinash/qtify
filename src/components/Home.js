@@ -1,14 +1,18 @@
 import "./home.css"
 import { useState, useEffect } from "react";
-import { Navbar, Section } from "./index";
+import { Navbar, Section, FilterSection } from "./index";
 import axios from "axios";
 
 const ENDPOINT = "https://qtify-backend-labs.crio.do/";
 
 const Home = () =>{
 
-    const[topAlbums, setTopAlbums] = useState();
-    const[newAlbums, setNewAlbums] = useState();
+    const[topAlbums, setTopAlbums] = useState([]);
+    const[newAlbums, setNewAlbums] = useState([]);
+    const[songs, setSongs] = useState([]);
+    const[filteredSongs, setFilteredSongs] = useState([]);
+    const[genres, setGenres] = useState([]);
+
 
     useEffect(()=>{
         const asyncFunction = async ()=>{
@@ -17,11 +21,16 @@ const Home = () =>{
 
             const newAlbumsData = await axios.get(`${ENDPOINT}albums/new`);
             setNewAlbums(newAlbumsData.data);
+
+            const filterSongsData = await axios.get(`${ENDPOINT}songs`);
+            setSongs(filterSongsData.data);
+            setFilteredSongs(filterSongsData.data);
+
+            const filterGenres = await axios.get(`${ENDPOINT}genres`);
+            setGenres([{"key": "all", "label": "All"},...filterGenres.data.data]);
         }    
         asyncFunction();
     },[])
-
-    console.log(topAlbums)
 
     return(
         <>
@@ -37,8 +46,20 @@ const Home = () =>{
                 <img src="vibrating-headphone 1.png" alt="headphones" />
             </div>
         </div>
-        <Section title={"Top Albums"} data={topAlbums} />
-        <Section title={"New Albums"}  data={newAlbums} />
+        <Section navId="ta" title={"Top Albums"} data={topAlbums} />
+        <Section navId="na" title={"New Albums"}  data={newAlbums} />
+        <FilterSection navId="fa" title={"Songs"}  data={filteredSongs} filters={genres}
+            executeFilter={(genre)=>{
+                if(genre === "all"){
+                    setFilteredSongs(songs);
+                }
+                else{
+                    setFilteredSongs(songs.filter((song)=>{
+                        return song.genre.key === genre;
+                    }))
+                }
+            }}
+         />
         </>
     )
 }
